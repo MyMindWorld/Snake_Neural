@@ -99,10 +99,16 @@ class Snake(object):
     def change_direction(self, event):
         """ Changes direction of snake """
         if event.keysym in self.mapping:
-            print(self.vector)
-            if self.vector == (0, 1):
-                print('Down')
-            self.vector = self.mapping[event.keysym]
+            if event.keysym == "Down" and self.vector == self.mapping['Up']:
+                print('You tried to shit youself')
+            elif event.keysym == "Up" and self.vector == self.mapping['Down']:
+                print('You tried to shit youself')
+            elif event.keysym == "Left" and self.vector == self.mapping['Right']:
+                print('You tried to shit youself')
+            elif event.keysym == "Right" and self.vector == self.mapping['Left']:
+                print('You tried to shit youself')
+            else:
+                self.vector = self.mapping[event.keysym]
 
 
 # Setting up window
